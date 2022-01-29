@@ -4,6 +4,14 @@
              xmlns:local="clr-namespace:salonAnanas"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="ColorMain" Color="#ff4a6d"></SolidColorBrush>
+        <Style TargetType ="Button" x:Key="MenuButton">
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="Height" Value="50" ></Setter>
+            <Setter Property="Width" Value="200" ></Setter>
+            <Setter Property="FontSize" Value="24" ></Setter>
+            <Setter Property="Margin" Value="20"></Setter>
+            <Setter Property="Background" Value="{StaticResource ColorMain}"></Setter>
+        </Style>
     </Application.Resources>
 </Application>
