@@ -12,16 +12,30 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace salonAnanas
+namespace salonAnanas.Forms
 {
     /// <summary>
     /// Логика взаимодействия для ClientWindow.xaml
     /// </summary>
     public partial class ClientWindow : Window
     {
+        SalonAnanasEntities1 context;
         public ClientWindow()
         {
             InitializeComponent();
+            context = new SalonAnanasEntities1();
+           
+            dgClient.ItemsSource = context.Clients.ToList(); 
+        }
+
+        private void CmbGender_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

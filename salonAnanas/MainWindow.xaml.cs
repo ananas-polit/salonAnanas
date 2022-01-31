@@ -1,4 +1,5 @@
-﻿using salonAnanas.PartialClass;
+﻿using salonAnanas.Forms;
+using salonAnanas.PartialClass;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,22 +25,33 @@ namespace salonAnanas
         public MainWindow()
         {
             InitializeComponent();
-            Manager.MainFrame = MainFrame;
-            MainFrame.Navigate(new ClientWindow());
+            //Manager.MainFrame = MainFrame;
+            //MainFrame.Navigate(new ClientWindow());
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-            if (MainFrame.CanGoBack)
-                MainFrame.GoBack();
+            //if (MainFrame.CanGoBack)
+            //    MainFrame.GoBack();
         }
 
         private void MainFrame_ContentRendered(object sender, EventArgs e)
         {
-            if (!MainFrame.CanGoBack)
-                BtnBack.Visibility = Visibility.Collapsed;
-            else
-                BtnBack.Visibility = Visibility.Visible;
+            //if (!MainFrame.CanGoBack)
+            //    BtnBack.Visibility = Visibility.Collapsed;
+            //else
+            //    BtnBack.Visibility = Visibility.Visible;
+        }
+
+        private void BtnAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            var menu = new MenuWindow();
+            menu.ShowDialog();
+        }
+
+        private void BtnVisitor_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

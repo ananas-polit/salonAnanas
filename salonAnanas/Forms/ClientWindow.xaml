@@ -1,0 +1,56 @@
+﻿<Window x:Class="salonAnanas.Forms.ClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:salonAnanas.Forms"
+        mc:Ignorable="d"
+        Title="ClientWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="248*"/>
+            <ColumnDefinition Width="149*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="StackLetters" Orientation="Horizontal" Background="{StaticResource ColorMain}" Grid.ColumnSpan="2" Margin="0,0,-0.4,0.4">
+            <TextBlock FontWeight="Bold" Foreground="White" Margin="5" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown">All</TextBlock>
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Background="{StaticResource ColorMain}" Margin="0,50,-0.4,10" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <!--<TextBlock Width="71"> Gender:</TextBlock>
+            <ComboBox Name="CmbGender" DisplayMemberPath="Name" SelectionChanged="CmbGender_SelectionChanged" Width="80"/>
+            <TextBlock Width="62"> Team:</TextBlock>
+            <ComboBox Name="CmbTeam" DisplayMemberPath="TeamName" SelectionChanged="CmbTeam_SelectionChanged" Width="80"/>
+            <TextBlock Width="95">Player name:</TextBlock>
+            <TextBox x:Name="TxtPlayerName" TextChanged="TxtPlayerName_TextChanged"  Width="80"/>-->
+        </StackPanel>
+
+        <DataGrid x:Name="dgClient" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*" Margin="0,40,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+
+             
+                <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding }"></DataGridTextColumn>
+                <DataGridTextColumn Header="Patronymic" Binding="{Binding Patronymic}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Birthday" Binding="{Binding Birthday,StringFormat={}{0:dd.MMMM.yyyy}}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Registration Date" Binding="{Binding RegistrationDate,StringFormat={}{0:dd.MMMM.yyyy}}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Phone" Binding="{Binding Phone}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Gender Code" Binding="{Binding Gender.Name}"></DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding PhotoPath}" ></Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

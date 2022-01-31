@@ -13,25 +13,60 @@
             <RowDefinition Height="30"></RowDefinition>
         </Grid.RowDefinitions>
 
+        <ListView Grid.Row="1" x:Name="ListViewPictures">
+
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Image Source="{Binding Img}" Height="150" Width="250" 
+                           Margin="10"
+                           Stretch="UniformToFill"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+            <!--<ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"></StackPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>-->
+        </ListView>
+
         <Grid>
-            <Button x:Name="BtnBack" Click="BtnBack_Click"
+            <!--<Button x:Name="BtnBack" Click="BtnBack_Click"
                     HorizontalAlignment="Right"
                     Width="100"
-                    Height="30">Back</Button>
+                    Height="30" Content="Back"/>-->
             <TextBlock HorizontalAlignment="Center"
                      VerticalAlignment="Center"
-                       Text="{Binding ElementName=MainFrame, Path=Content.Title}"></TextBlock>
-            <StackPanel Orientation="Horizontal">
-                <Image Source="Resources/beauty_logo.png" Margin="10"></Image>
-                <TextBlock VerticalAlignment="Center">
-                    Beauty salon "Muzzle"
-                </TextBlock>
+                       Text="{Binding Content.Title, ElementName=MainFrame}"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0.4,0">
+                <Image Source="Resources/beauty_logo.png" Margin="10"/>
+                <TextBlock VerticalAlignment="Center"><Run Text="Beauty salon &quot;Muzzle&quot;"/></TextBlock>
             </StackPanel>
         </Grid>
         <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"
-                ContentRendered="MainFrame_ContentRendered"></Frame>
-        <Rectangle Grid.Row="2" Fill="{StaticResource ColorMain}"></Rectangle>
+                ContentRendered="MainFrame_ContentRendered"/>
+        <Rectangle Grid.Row="2" Fill="{StaticResource ColorMain}"/>
 
+
+
+        <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="BtnVisitor"
+                    Click="BtnVisitor_Click" 
+                    
+            Style="{StaticResource MenuButton}" Content="Visitor"/>
+            <Button x:Name="BtnVisitor_Copy"
+                Click="BtnVisitor_Click" 
+                    
+                Style="{StaticResource MenuButton}" Content="Visitor" Margin="20,25"/>
+        </StackPanel>-->
+        <Grid/>
+        <Button x:Name="BtnAdmin" 
+                     Click="BtnAdmin_Click" 
+            Style="{StaticResource MenuButton}" Content="Admin" Margin="427,116,166.6,123.6" Grid.Row="1" Width="Auto"/>
+        <Button x:Name="BtnVisitor" 
+                     Click="BtnVisitor_Click" 
+            Style="{StaticResource MenuButton}" Content="Visitor" Margin="170,116,423.6,123.6" Grid.Row="1" Width="Auto"/>
     </Grid>
-  
+
 </Window>
