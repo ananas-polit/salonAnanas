@@ -19,9 +19,7 @@
                     Style="{StaticResource MenuButton}"
                     Content ="Client Service"></Button>
             
-            <Button x:Name="BtnProduct" Click="BtnProduct_Click"
-                    Style="{StaticResource MenuButton}"
-                    Content ="Product"></Button>
+        
 
         </UniformGrid>
     </Grid>

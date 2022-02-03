@@ -32,17 +32,16 @@ namespace salonAnanas.Forms
 
         private void BtnService_Click(object sender, RoutedEventArgs e)
         {
-
+            var service = new ServiceWindow();
+            service.ShowDialog();
         }
 
         private void BtnClientService_Click(object sender, RoutedEventArgs e)
         {
-
+            var cs = new ClientServiceWindow();
+            cs.ShowDialog();
         }
 
-        private void BtnProduct_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }

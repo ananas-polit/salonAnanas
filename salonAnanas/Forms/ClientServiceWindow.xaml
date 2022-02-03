@@ -1,0 +1,34 @@
+﻿<Window x:Class="salonAnanas.Forms.ClientServiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:salonAnanas.Forms"
+        mc:Ignorable="d"
+        Title="ClientServiceWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="4">
+            <Button x:Name="BtnAddCS" Content="Добавить" Click="BtnAddCS_Click" Background="{StaticResource ColorMain}"/>
+            <Button x:Name="BtnDelCS" Content="Удалить " Click="BtnDelCS_Click" Background="{StaticResource ColorMain}"/>
+        </StackPanel>
+        <DataGrid Grid.Row="1" x:Name="dgClientService" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" Grid.ColumnSpan="4" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Клиент" Binding="{Binding Client.LastName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Сервис" Binding="{Binding Service.Title}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Начальное время" Binding="{Binding StartTime,StringFormat={}{0:dd.MMMM.yyyy}}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Описание" Binding="{Binding Comment}"/>
+                <DataGridTemplateColumn Header="Редактировать">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnEditCS" Click="BtnEditCS_Click" >Изменить</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
