@@ -24,6 +24,8 @@ namespace salonAnanas.Forms
         {
             InitializeComponent();
             this.context = context1;
+            CmbClients.ItemsSource = context.Clients.ToList();
+            CmbServices.ItemsSource = context.Services.ToList();
             this.DataContext = clientService;
 
         }

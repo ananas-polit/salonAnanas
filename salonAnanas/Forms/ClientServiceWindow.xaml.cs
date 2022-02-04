@@ -24,6 +24,7 @@ namespace salonAnanas.Forms
         {
             InitializeComponent();
             context = new SalonAnanasEntities1();
+        
             dgClientService.ItemsSource = context.ClientServices.ToList();
         }
 

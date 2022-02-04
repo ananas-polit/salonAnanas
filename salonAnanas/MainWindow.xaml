@@ -32,10 +32,10 @@
         </ListView>
 
         <Grid>
-            <!--<Button x:Name="BtnBack" Click="BtnBack_Click"
+            <Button x:Name="BtnBack" Click="BtnBack_Click"
                     HorizontalAlignment="Right"
                     Width="100"
-                    Height="30" Content="Back"/>-->
+                    Height="30" Content="Back"/>
             <TextBlock HorizontalAlignment="Center"
                      VerticalAlignment="Center"
                        Text="{Binding Content.Title, ElementName=MainFrame}"/>

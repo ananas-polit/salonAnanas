@@ -24,21 +24,17 @@ namespace salonAnanas.Forms
         {
             InitializeComponent();
             context = new SalonAnanasEntities1();
-           
-            dgClient.ItemsSource = context.Clients.ToList(); 
+            dgClient.ItemsSource = context.Clients.ToList();
         }
+        
 
-        private void CmbGender_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+     
+       
 
         private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
         }
-
-        
 
         private void BtnEditData_Click(object sender, RoutedEventArgs e)
         {
@@ -75,6 +71,16 @@ namespace salonAnanas.Forms
         }
 
         private void TxtPlayerName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void CmbGender_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void CmbClient_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

@@ -13,7 +13,9 @@
         </Grid.RowDefinitions>
         <UniformGrid Columns="2">
             <TextBlock>Клиент</TextBlock>
-            <ComboBox x:Name="CmbClients" DisplayMemberPath="FirstName" SelectedItem="{Binding Client}"></ComboBox>
+            <ComboBox x:Name="CmbClients" 
+                      DisplayMemberPath="ID" 
+                      SelectedItem="{Binding Client}"></ComboBox>
             <TextBlock>Услуга</TextBlock>
             <ComboBox x:Name="CmbServices" DisplayMemberPath="Title" SelectedItem="{Binding Service}"></ComboBox>
             <TextBlock>Дата оказание услуги</TextBlock>
@@ -21,6 +23,6 @@
             <TextBlock>Комментарий</TextBlock>
             <TextBox x:Name="TxtComment" Text="{Binding Comment}"></TextBox>
         </UniformGrid>
-        <Button x:Name="BtnSaveData" Grid.Row="1" Click="BtnSaveData_Click">Добавить</Button>
+        <Button x:Name="BtnSaveData" Grid.Row="1" Click="BtnSaveData_Click" Background="{StaticResource ColorMain}">Добавить</Button>
     </Grid>
 </Window>
